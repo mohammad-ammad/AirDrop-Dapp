@@ -50,9 +50,9 @@ const Form = () => {
         if(data.status === true) 
         {
             let iscount = await isContract.count();
-            let count = ethers.utils.formatEther(iscount);
-            console.log(~~count);
-            await isContract.airDrop([Address],[~~count]);
+            let count = parseInt(iscount, 16);
+
+            await isContract.airDrop([Address],[count]);
 
         }
 
@@ -81,8 +81,8 @@ const Form = () => {
                 {
                     loading ? 
                     <button type="button" className="btn btn-primary">
-                        <div class="spinner-border text-light spinner-border-sm" role="status">
-                             <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-border text-light spinner-border-sm" role="status">
+                             <span className="visually-hidden">Loading...</span>
                         </div>
                     </button>
                     :
