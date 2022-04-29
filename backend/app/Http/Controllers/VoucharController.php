@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vouchar;
+use App\Models\User;
 use Validator;
 
 class VoucharController extends Controller
@@ -26,38 +27,66 @@ class VoucharController extends Controller
             $response['message'] = $validation->messages()->first();
             return response()->json($response);
         }
+
         else if(!in_array($req->vouchar, $vouchar))
         {
             return response()->json([
                 "message"=>"invalid vouchar"
             ]);
         }
+
         else 
         {
-            $check = Vouchar::where("vouchar",$req->vouchar)->where("meta_mask_account",$req->meta_mask_account)->count();
-            if($check === 0)
-            {
-                $model = new Vouchar();
-                $model->vouchar = $req->vouchar;
-                $model->meta_mask_account = $req->meta_mask_account;
-                $model->nft_id = "vouchar_".$req->vouchar;
+            $meta = User::where('meta_mask_account',$req->meta_mask_account)->count();
 
+            if($meta === 0)
+            {
+                $model = new User();
+                $model->meta_mask_account = $req->meta_mask_account;
                 $model->save();
 
                 if(! empty($model->id))
                 {
+                    $voucharModel = new Vouchar();
+                    $voucharModel->vouchar = $req->vouchar;
+                    $voucharModel->user_id = $model->id;
+                    $voucharModel->save();
+
                     return response()->json([
                         "message"=>"Vouchar Applied Successfully",
                         "status"=>true
                     ]);
                 }
+
             }
             else 
             {
-                return response()->json([
-                    "message"=>"vouchar already used"
-                ]);
+                $user = User::where('meta_mask_account',$req->meta_mask_account)->select('id')->get();
+                $check = Vouchar::where('vouchar',$req->vouchar)->where('user_id',$user[0]->id)->count();
+
+                if(!empty ($user[0]->id) && $user[0]->id > 0 && $check === 0)
+                {
+                    $voucharModel = new Vouchar();
+                    $voucharModel->vouchar = $req->vouchar;
+                    $voucharModel->user_id = $user[0]->id;
+                    $voucharModel->save();
+
+                    return response()->json([
+                        "message"=>"Vouchar Applied Successfully",
+                        "status"=>true
+                    ]);
+                }
+
+                else 
+                {
+                    return response()->json([
+                        "message"=>"vouchar already used"
+                    ]);
+                }
+
+               
             }
         }
+
     }
 }

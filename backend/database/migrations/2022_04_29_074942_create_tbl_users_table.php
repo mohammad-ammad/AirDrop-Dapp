@@ -15,10 +15,7 @@ class CreateTblUsersTable extends Migration
     {
         Schema::create('tbl_users', function (Blueprint $table) {
             $table->id();
-            $table->string("vouchar");
             $table->string("meta_mask_account");
-            $table->string("nft_id");
-            $table->integer("air_drop_status")->default(0);
             $table->timestamps();
         });
     }

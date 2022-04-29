@@ -15,13 +15,21 @@ const Form = () => {
     useEffect(()=>{
         const loadContract = async () => 
         {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            if(window.ethereum)
+            {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
     
-            const signer = provider.getSigner();
+                const signer = provider.getSigner();
 
-            const contract = new ethers.Contract("0xeb862cA92bd3067bA466a02C8a39f8d1F92E9745", airDrop, signer);
+                const contract = new ethers.Contract("0xeb862cA92bd3067bA466a02C8a39f8d1F92E9745", airDrop, signer);
 
-            setIsContract(contract);
+                setIsContract(contract);
+
+            }
+            else 
+            {
+                alert("Need to install MetaMask");
+            }
              
         }
 
@@ -69,13 +77,18 @@ const Form = () => {
   return (
     <>
     <div className="form__wrapper">
+        <div>
+            <p>Trusted and Secure</p>
+             <p>NFT AIR-DROP</p>
+             <button className='get_start_btn'>Get Started</button>
+        </div>
         <form className='form__container' onSubmit={submitHandler}>
         {
             isMessage ? <Alert message={message}/> : ''
         }
             <div className="mb-3">
-                <label className="form-label">Vouchar</label>
-                <input type="text" className="form-control" value={vouchar} onChange={(e)=>setVouchar(e.target.value)}/>
+                <label className="form-label"></label>
+                <input type="text" className="form-control" placeholder='Vouchar *' value={vouchar} onChange={(e)=>setVouchar(e.target.value)}/>
             </div>
             <div className="d-grid gap-2">
                 {
@@ -86,7 +99,7 @@ const Form = () => {
                         </div>
                     </button>
                     :
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Claim Your NFT</button>
                 }
             </div>
         </form>

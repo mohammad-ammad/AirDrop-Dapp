@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vouchar extends Model
 {
-    protected $table = "tbl_users";
+    protected $table = "tbl_vouchar";
     use HasFactory;
 }
