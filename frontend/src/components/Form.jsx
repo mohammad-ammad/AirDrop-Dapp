@@ -40,38 +40,45 @@ const Form = () => {
     {
         e.preventDefault();
         
-        setLoading(true);
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-        const account = provider.getSigner();
-        const Address = await account.getAddress();
-        
+        if(window.ethereum)
+        {
+            setLoading(true);
+            await window.ethereum.request({ method: "eth_requestAccounts" });
+            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+            const account = provider.getSigner();
+            const Address = await account.getAddress();
+            
 
-        let meta_mask_account = Address;
-        
-        const {data} = await axios.post("/api/v1/user",{vouchar,meta_mask_account},{
-            headers:{
-                "Content-Type":"application/json"
+            let meta_mask_account = Address;
+            
+            const {data} = await axios.post("/api/v1/user",{vouchar,meta_mask_account},{
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
+
+            if(data.status === true) 
+            {
+                let iscount = await isContract.count();
+                let count = parseInt(iscount, 16);
+
+                await isContract.airDrop([Address],[count]);
+
             }
-        })
 
-        if(data.status === true) 
-        {
-            let iscount = await isContract.count();
-            let count = parseInt(iscount, 16);
 
-            await isContract.airDrop([Address],[count]);
+            setLoading(false);
 
+            if(data)
+            {
+                setIsMessage(true);
+                setMessage(data.message);
+                setVouchar("");
+            }
         }
-
-
-        setLoading(false);
-
-        if(data)
+        else 
         {
-            setIsMessage(true);
-            setMessage(data.message);
-            setVouchar("");
+            alert("Install MetaMask!!")
         }
     }
   return (
