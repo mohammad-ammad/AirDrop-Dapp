@@ -1,0 +1,26 @@
+.footer__wrapper 
+{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0.5vmax 5vmax;
+}
+
+.footer__wrapper > div:last-child 
+{
+    display: flex;
+}
+
+.footer__wrapper > div:last-child > div > a 
+{
+    text-decoration: none;
+    margin-right: 1vmax;
+    color: var(--primary-text);
+}
+
+@media  screen and (max-width:550px) {
+    .footer__wrapper 
+    {
+        flex-direction: column;
+    }
+}

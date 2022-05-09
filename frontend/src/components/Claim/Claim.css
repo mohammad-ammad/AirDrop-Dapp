@@ -1,0 +1,86 @@
+.claim__wrapper 
+{
+    background: rgb(255,239,0);
+    background: linear-gradient(0deg, rgba(255,239,0,1) 0%, rgba(255,170,11,1) 48%);
+    min-height: 80.5vh;
+    display:  flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.claim__wrapper > .left 
+{
+    background-color: var(--primary-text);
+    padding: 0.5vmax;
+}
+.claim__wrapper > .left > img 
+{
+    width: 400px;
+    height: auto;
+}
+
+.claim__wrapper > .right
+{
+    background-color: var(--primary-color);
+    width: 500px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.claim__wrapper > .right > form > div > input 
+{
+    width: 450px !important;
+    height: 8vh !important;
+    background-color: var(--primary-color) !important;
+    border: 2px solid #FFAA0B !important;
+    border-radius: 0.5vmax;
+}
+
+.claim__wrapper > .right > form > div > button 
+{
+    width: 450px;
+    padding: 0.5vmax 4vmax;
+    margin-top: 1vmax;
+    background-color: var(--primary-text);
+    color: var(--primary-color);
+    border-radius: 0.5vmax;
+    border: 1px solid var(--primary-color);
+    font-size: 1.8vmax;
+    font-weight: 500;
+}
+
+.message 
+{
+    color: #FFAA0B;
+}
+
+@media  screen and (max-width:768px) {
+    .claim__wrapper  
+    {
+        flex-direction: column;
+    }
+    .claim__wrapper > .left 
+    {
+        margin: 2vmax 0;
+    }
+    .claim__wrapper > .right 
+    {
+        margin: 2vmax 3vmax;
+        width: 90%;
+    }
+    .claim__wrapper > .right > form > div > input  
+    {
+        width: 350px !important;
+    }
+    .claim__wrapper > .right > form > div > button 
+    {
+        width: 350px;
+        height: 8vh;
+    }
+}
+
+
+
+

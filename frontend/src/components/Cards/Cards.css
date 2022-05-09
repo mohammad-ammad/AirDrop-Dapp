@@ -1,0 +1,37 @@
+.Card__wrappper 
+{
+    background-color: var(--primary-text);
+    width: 95%;
+    margin: 0.5vmax;
+    text-align: center;
+    padding: 0.5vmax;
+}
+
+.Card__wrappper > div:first-child > img 
+{
+    /* padding: 0.5vmax; */
+    width: 200px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.Card__wrappper > div:last-child 
+{
+    color: rgb(1, 1, 184);
+    font-size: 2vmax;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Bilbo', cursive;
+}
+
+@media  screen and (max-width:860px) {
+    .Card__wrappper {
+        width: 100%;
+    }
+}
+
+@media  screen and (max-width:550px) {
+    .Card__wrappper {
+        padding: 1vmax;
+    }
+}

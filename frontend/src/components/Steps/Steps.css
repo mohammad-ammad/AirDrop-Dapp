@@ -1,0 +1,75 @@
+.Steps__wrapper 
+{
+    background-color: var(--primary-color);
+    min-height: 50vh;
+    padding: 2vmax 15vmax;
+    color: var(--primary-text);
+}
+
+.Steps__wrapper > h3 
+{
+    font-family: 'Bilbo', cursive;
+    font-size: 3vmax;
+    text-align: center;
+}
+
+.Steps__wrapper > ol > li 
+{
+    font-size: 1vmax;
+    padding: 0 1vmax;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Steps__wrapper > ol > li > p 
+{
+    font-size: 0.9vmax;
+}
+.Steps__wrapper > div
+{
+    padding-left: 3vmax;
+}
+.Steps__wrapper > div > img 
+{
+    width: 200px;
+    height: auto;
+}
+
+@media  screen and (max-width:850px) {
+    .Steps__wrapper > h3 
+    {
+        font-size: 4vmax;
+    }
+    .Steps__wrapper > ol > li 
+    {
+        font-size: 1.6vmax;
+    }
+    .Steps__wrapper > ol > li > p 
+    {
+        font-size: 1.3vmax;
+    }
+}
+
+@media  screen and (max-width:850px) {
+    .Steps__wrapper 
+    {
+        padding: 2vmax;
+    }
+    .Steps__wrapper > ol > li 
+    {
+        font-size: 1.8vmax;
+    }
+    .Steps__wrapper > ol > li > p 
+    {
+        font-size: 1.6vmax;
+    }
+    .Steps__wrapper > div > img 
+    {
+        width: 100px;
+        height: auto;
+    }
+    .Steps__wrapper > div
+    {
+        padding-left: 5vmax;
+    }
+}

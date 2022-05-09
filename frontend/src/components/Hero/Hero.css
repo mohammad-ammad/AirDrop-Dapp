@@ -1,0 +1,62 @@
+.Hero__wrapper 
+{
+    background: rgb(255,239,0);
+    background: linear-gradient(0deg, rgba(255,239,0,1) 0%, rgba(255,170,11,1) 48%);
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3vmax 0;
+}
+
+.Hero__wrapper > .top > h3 
+{
+    color: var(--primary-text);
+    font-family: 'Bilbo', cursive;
+    font-size: 2.5vmax;
+}
+
+.Hero__wrapper > .mid 
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:1vmax;
+}
+.Hero__wrapper > .bottom
+{
+    margin-top: 1vmax;
+}
+.Hero__wrapper > .bottom > a > button
+{
+    padding: 0.5vmax 4vmax;
+    background-color: var(--primary-text);
+    color: var(--primary-color);
+    border-radius: 0.5vmax;
+    border: 1px solid var(--primary-color);
+    font-size: 1.8vmax;
+    font-weight: 500;
+}
+
+@media  screen and (max-width:860px) {
+    .Hero__wrapper > .mid 
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .Hero__wrapper > .top > h3 
+    {
+        font-size: 3vmax;
+    }
+    .Hero__wrapper > .bottom > a > button
+    {
+        padding: 0.5vmax 5vmax;
+        font-size: 2vmax;
+    }
+}
+
+@media  screen and (max-width:550px) {
+    .Hero__wrapper > .mid 
+    {
+        grid-template-columns: 1fr;
+    }
+}

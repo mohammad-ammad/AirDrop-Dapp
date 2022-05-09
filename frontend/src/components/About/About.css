@@ -1,0 +1,32 @@
+.about__wrapper 
+{
+    background-color: var(--primary-color);
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vmax 15vmax;
+}
+
+.about__wrapper > .left > div > p
+{
+    color: var(--primary-text);
+    padding-left: 1vmax;
+    font-size: 1vmax;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+@media  screen and (max-width:991px) {
+    .about__wrapper > .left > div > p
+    {
+        font-size: 1.6vmax;
+    }
+}
+
+@media  screen and (max-width:800px) {
+    .about__wrapper 
+    {
+        flex-direction: column;
+    }
+}

@@ -1,68 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&family=Roboto&display=swap');
 
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #fff;
-  background-color:#0f0e13 !important;
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
-}
-
-.navbar__wrapper
+:root 
 {
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1vmax 2vmax;
+  --primary-color: #000000;
+  --primary-text: #ffffff;
 }
 
-.navbar__wrapper > div:first-child 
+body 
 {
-  font-size: 1.7vmax;
-  font-weight: 700;
-  color: #fff;
-}
-
-.navbar__wrapper > div:last-child > button
-{
-  background-color: #2952E3;
-  color: #fff;
-  border: none;
-  outline: none;
-  padding: 0.5vmax 1.2vmax;
-  border-radius: 0.5vmax;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar__wrapper > div:last-child > button:hover 
-{
-  background-color: #1536ac;
-  transition: all 0.3s ease-in-out;
-}
-
-.account
-{
-  background-color: #2952E3;
-  color: #fff;
-  padding: 0.5vmax 1vmax;
-  border-radius: 0.5vmax;
-}
-
-@media  screen and (max-width:768px) {
-  .navbar__wrapper > div:first-child 
-  {
-    font-size: 2vmax;
-  }
+  /* font-family: 'Roboto', sans-serif;
+  font-family: 'Bilbo', cursive; */
+  color: var(--primary-text);
 }
