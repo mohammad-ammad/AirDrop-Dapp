@@ -1,27 +1,27 @@
 import React from 'react'
 import Cards from '../Cards/Cards';
 import './Hero.css';
-import OneImg from "../../assets/1.PNG";
-import TwoImg from "../../assets/2.PNG";
-import ThreeImg from "../../assets/3.PNG";
-import FourImg from "../../assets/4.PNG";
 import { Link } from 'react-router-dom';
+import FiveImg from "../../assets/5.png";
+import sixImg from "../../assets/6.png";
+import sevenImg from "../../assets/7.png";
+import eightImg from "../../assets/8.png";
 
 const Hero = () => {
   return (
     <div className="Hero__wrapper">
         <div className="top">
-            <h3>Die Honigdachs-NFT-Kollektion von UTRY.ME</h3>
+            <h1>Hol dir deinen Honigdachs-NFT von UTRY.ME</h1>
         </div>
         <div className="mid">
-            <Cards img={OneImg} tag="#654"/>
-            <Cards img={TwoImg} tag="#655"/>
-            <Cards img={ThreeImg} tag="#656"/>
-            <Cards img={FourImg} tag="#657"/>
+            <Cards img={FiveImg} tag="#654"/>
+            <Cards img={sixImg} tag="#655"/>
+            <Cards img={sevenImg} tag="#656"/>
+            <Cards img={eightImg} tag="#657"/>
         </div>
         <div className="bottom">
             <Link to='/claim-nft'>
-              <button type='button'>NFT Claimen</button>
+              <button type='button'>NFT anfordern</button>
             </Link>
         </div>
     </div>

@@ -6,6 +6,7 @@
     display:  flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 5.5vmax 0;
 }
 .claim__wrapper > .left 
 {
@@ -48,18 +49,21 @@
     border-radius: 0.5vmax;
     border: 1px solid var(--primary-color);
     font-size: 1.8vmax;
-    font-weight: 500;
+    font-weight: 900;
+    font-family:"museo-sans";
 }
 
 .message 
 {
     color: #FFAA0B;
+    text-transform: capitalize;
 }
 
 @media  screen and (max-width:768px) {
     .claim__wrapper  
     {
         flex-direction: column;
+        padding: 15vmax 0;
     }
     .claim__wrapper > .left 
     {
@@ -72,12 +76,17 @@
     }
     .claim__wrapper > .right > form > div > input  
     {
-        width: 350px !important;
+        width: 300px !important;
     }
     .claim__wrapper > .right > form > div > button 
     {
-        width: 350px;
+        width: 300px;
         height: 8vh;
+    }
+    .claim__wrapper > .left > img 
+    {
+        width: 300px;
+        height: auto;
     }
 }
 

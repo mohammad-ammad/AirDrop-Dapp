@@ -13,7 +13,8 @@
 .value__wrapper > h3 
 {
     font-size: 3vmax;
-    font-family: 'Bilbo', cursive;
+    /* font-family: 'Bilbo', cursive; */
+    font-family:"wordy-diva";
     text-align: center;
     color: var(--primary-text);
 }
@@ -23,7 +24,7 @@
     font-size: 1vmax;
     padding: 0 25vmax;
     color: var(--primary-text);
-    font-family: 'Roboto', sans-serif;
+    font-family:"museo-sans";
     text-align: center;
     line-height: 1.5;
 }
@@ -34,6 +35,7 @@
     grid-template-columns: repeat(4,1fr);
     grid-gap: 1vmax;
     width: 70%;
+    margin-bottom: 1.5vmax;
 }
 
 @media  screen and (max-width:998px) {

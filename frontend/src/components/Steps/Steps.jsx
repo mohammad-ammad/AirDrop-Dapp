@@ -1,40 +1,45 @@
 import React from 'react'
 import './Steps.css';
 import LinkedIn from '../../assets/linkedin.png';
+
 const Steps = () => {
   return (
-    <div className="Steps__wrapper">
-        <h3>Benotigte Steps</h3>
+    <div className="Steps__wrapper" id="steps_section">
+        <h3>Benötigte Steps</h3>
         <ol>
             <li>
-            Auf den Button "NFT claimen" klicken.
+            Auf den Button “NFT claimen” klicken.
             </li>
             <li>
             Unser kurzes Erklärungsvideo ansehen und/oder den Text darunter lesen.
             </li>
             <li>
-            MetaMask-Wallet connecten
+            MetaMask-Wallet connecten:
             <p>
-            Gehe auf die metamask,iO kliCke auf Dann "Install Metamask for
-            Wenn du ejnen anderen Browser hast, klicke einfach auf das Jeweilige Icon Klicke dich durch die folgenden Fenster.
-            Du Wirst gefragt. 0b du bereits eine "Seed-Phrase" hast Die hast du natüriich n-cch nicht — also auf Yes, lets get set up"
-            klicken und du erschaffst damit eine neue Wallet inklusive besagter Seed-phrase
-            Die Seed-phrase ist die einz/ge Möglichkeit, deine Wallet bej Ver/ust Wiederherzustellen, Also gut aufbewahren!
-            auf 
+            Gehe auf die Website metamask.io und klicke auf "Download". Dann "Install Metamask for
+            Chrome". Wenn du einen anderen Browser hast, klicke einfach auf das jeweilige Icon. Klicke
+            dich durch die folgenden Fenster. Du wirst gefragt, ob du bereits eine "Seed-Phrase" hast.
+            Die hast du natürlich noch nicht – also auf "Yes, let's get set up" klicken und du erschaffst
+            damit eine neue Wallet inklusive besagter Seed-Phrase. Die Seed-Phrase ist die einzige
+            Möglichkeit, deine Wallet bei Verlust wiederherzustellen. Also gut aufbewahren! Erstelle ein
+            sicheres Passwort. 
             </p>
             <p>
-            "click here to Secret Schreibe dir die unbedingt in
-            richtgen Rejhenfolge auf Ansonsten du den Zugang zu demem virtuellen Kanto Bestätige die Worte.
-            wenn du dazu aufgefcvdert wirst. Im Anschluss erschemt ein kleines Puzzle-Icon oben rechts in deinem Browser,
-            Klicke darauf und pinne das Fuchs-icon an Nun ist MetaMask oben rechts in deinem Browser und du kannst die
-            benutzen, um herauszufinden, wie deine Wallet-Adresse ist klicke oben rechts auf das Fuchs-icon von MetaMask, In
-            der oberen Zejle unter "Accountl" ist deine Wallet-Adresse. auf der du ETH- und z.B_ Polygon-rokens senden und
-            empfangen kannst.
+            Klicke auf "click here to reveal secret words", schreibe dir die Worte
+            unbedingt in der richtigen Reihenfolge auf. Ansonsten verlierst du den Zugang zu deinem
+            virtuellen Konto. Bestätige die Worte, wenn du dazu aufgefordert wirst. Im Anschluss
+            erscheint ein kleines Puzzle-Icon oben rechts in deinem Browser. Klicke darauf und pinne
+            das Fuchs-Icon an. Nun ist MetaMask oben rechts in deinem Browser und du kannst die
+            Wallet benutzen. Um herauszufinden, wie deine Wallet-Adresse ist, klicke oben rechts auf
+            das Fuchs-Icon von MetaMask. In der oberen Zeile unter "Account1" ist deine
+            Wallet-Adresse, auf der du ETH- und z.B. Polygon-Tokens senden und empfangen kannst.
             </p>
             </li>
             <li>
-            Den N FT-Code vom gedruckten Ticket eingeben.
-            <p>Bitte etwas Geduld. der NFT erscheint automat'sch nach wenigen Minuten m deiner Wallet.</p>
+            Den NFT-Code vom gedruckten Ticket eingeben.
+            <p>Bitte etwas Geduld, der NFT erscheint automatisch nach wenigen Minuten in deiner Wallet.
+              (Anm. von André: Idealerweise den gesamten Erklärungprozess in einzelnen, kleinen formatierten Schritten.
+              Ggfs. sogar mit Nummerierung)</p>
             </li>
         </ol>
         <div>

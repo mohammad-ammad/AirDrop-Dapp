@@ -9,7 +9,8 @@
 .faq__wrapper > h3 
 {
     color: var(--primary-text);
-    font-family: 'Bilbo', cursive;
+    /* font-family: 'Bilbo', cursive; */
+    font-family:"wordy-diva";
     font-weight: 700;
     text-align: center;
 }
@@ -30,7 +31,7 @@
 .accordion-button
 {
     border-radius: 0.5vmax !important;
-    font-family: 'Bilbo', cursive !important;
+    font-family:"wordy-diva" !important;
     font-size: 2vmax !important;
     font-weight: 900 !important;
 }
@@ -43,7 +44,7 @@
 }
 
 .accordion-body {
-    font-family: 'Roboto', sans-serif;
+    font-family:"museo-sans";
     font-size: 1vmax;
 }
 

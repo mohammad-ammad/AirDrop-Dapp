@@ -16,6 +16,7 @@
     text-decoration: none;
     margin-right: 1vmax;
     color: var(--primary-text);
+    font-family:"museo-sans";
 }
 
 @media  screen and (max-width:550px) {
