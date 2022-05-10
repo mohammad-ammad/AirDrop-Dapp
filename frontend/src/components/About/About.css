@@ -29,4 +29,10 @@
     {
         flex-direction: column;
     }
+
+    .about__wrapper > .right > img 
+    {
+        object-fit: cover;
+    }
+
 }

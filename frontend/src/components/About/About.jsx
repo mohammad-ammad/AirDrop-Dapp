@@ -1,6 +1,8 @@
 import React from 'react'
 import AboutImg from "../../assets/about.PNG";
 import PageImg from "../../assets/page.PNG";
+import PaperSvg from "../../assets/notes_withoutText.svg";
+
 import './About.css';
 
 const About = () => {
@@ -27,6 +29,7 @@ const About = () => {
         </div>
         <div className="right">
             <img src={PageImg} alt="" />
+            
         </div>
     </div>
   )

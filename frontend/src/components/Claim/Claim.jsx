@@ -49,7 +49,7 @@ const Claim = () => {
   
               const signer = provider.getSigner();
 
-              const contract = new ethers.Contract("0xeb862cA92bd3067bA466a02C8a39f8d1F92E9745", airDrop, signer);
+              const contract = new ethers.Contract("0x499A47413874A82FFF0581bb9732e66403985061", airDrop, signer);
 
               setIsContract(contract);
 
@@ -98,14 +98,17 @@ const Claim = () => {
                 let iscount = await isContract.count();
                 let count = parseInt(iscount, 16);
 
-                const res = await isContract.airDrop([Address],[count]);
+                if(count <= 1000)
+                {
+                    const res = await isContract.airDrop([Address],[count]);
 
-                res.wait();
-
-                console.log(res);
-
-                setIsId(true)
-                setTransMsg(res.hash);
+                    res.wait();
+    
+                    console.log(res);
+    
+                    setIsId(true)
+                    setTransMsg(res.hash);
+                }
 
             }
 
@@ -138,7 +141,7 @@ const Claim = () => {
                 isMessage ? <p className='message'>{message}</p> : ''
             }
             {
-                isId ? <p className='message'>Confirmation Transaction ID: {transMsg.slice(0,6)}...{transMsg.slice(39)}</p> : ''
+                isId ? <p className='message'>Confirmation Transaction ID: {transMsg.slice(0,6)}...{transMsg.slice(59)}</p> : ''
             }
             <input type="text" name="" id="" placeholder='Vouchar *'  value={vouchar} onChange={(e)=>setVouchar(e.target.value)}/>
             </div>
