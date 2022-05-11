@@ -8,7 +8,7 @@ import FourImg from "../../assets/4.PNG";
 const Values = () => {
   return (
     <div className="value__wrapper">
-        <h3>Values</h3>
+        <h3>Club Vorteile</h3>
         <p>
         Du bist Teil des exklusiven Honigdachs-VIP-Club und wirst auf LinkedIN oder per Mail
         regelmäßig mit den heißesten News rund um Utry.me und die Honigdachs-NFT-Kollektion

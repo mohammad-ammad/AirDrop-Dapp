@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import './Claim.css';
 import GIF from "../../assets/nft.gif";
-import Logo from "../../assets/logo.PNG";
+import Logo from "../../assets/logo.png";
 import axios from "axios";
-import {ethers} from "ethers";
+import {ethers, providers} from "ethers";
 import airDrop from "../../utils/airDrop.json";
 import { toast } from 'react-toastify';
+
 
 const networks = {
     polygon: {
@@ -53,6 +54,10 @@ const Claim = () => {
 
               setIsContract(contract);
 
+              console.log(contract)
+            
+           
+
           }
           else 
           {
@@ -92,6 +97,7 @@ const Claim = () => {
                     "Content-Type":"application/json"
                 }
             })
+
 
             if(data.status === true) 
             {
@@ -143,7 +149,7 @@ const Claim = () => {
             {
                 isId ? <p className='message'>Confirmation Transaction ID: {transMsg.slice(0,6)}...{transMsg.slice(59)}</p> : ''
             }
-            <input type="text" name="" id="" placeholder='Vouchar *'  value={vouchar} onChange={(e)=>setVouchar(e.target.value)}/>
+            <input type="text" name="" id="" placeholder='Dein NFT-Gutschein Code*'  value={vouchar} onChange={(e)=>setVouchar(e.target.value)}/>
             </div>
             <div>
             {

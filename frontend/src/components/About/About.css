@@ -17,6 +17,8 @@
     line-height: 1.6;
 }
 
+
+
 @media  screen and (max-width:991px) {
     .about__wrapper > .left > div > p
     {
@@ -32,7 +34,8 @@
 
     .about__wrapper > .right > img 
     {
-        object-fit: cover;
+        width: 360px;
+        /* object-fit: cover; */
     }
 
 }

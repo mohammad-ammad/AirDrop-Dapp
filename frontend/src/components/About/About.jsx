@@ -1,7 +1,7 @@
 import React from 'react'
 import AboutImg from "../../assets/about.PNG";
 import PageImg from "../../assets/page.PNG";
-import PaperSvg from "../../assets/notes_withoutText.svg";
+import PaperSvg from "../../assets/notes.png";
 
 import './About.css';
 
@@ -28,7 +28,7 @@ const About = () => {
             </div>
         </div>
         <div className="right">
-            <img src={PageImg} alt="" />
+            <img src={PaperSvg} alt="" />
             
         </div>
     </div>

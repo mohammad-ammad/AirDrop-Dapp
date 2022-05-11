@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './TopNav.css';
-import Logo from '../../assets/logo.PNG';
+import Logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import {ethers} from "ethers"
 import {IoIosMenu} from "react-icons/io"

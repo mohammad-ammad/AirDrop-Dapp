@@ -37,6 +37,7 @@
     background-color: var(--primary-color) !important;
     border: 2px solid #FFAA0B !important;
     border-radius: 0.5vmax;
+    margin-top: 1vmax;
 }
 
 .claim__wrapper > .right > form > div > button 

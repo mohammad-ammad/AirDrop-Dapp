@@ -94,9 +94,7 @@ const FAQ = () => {
             <div id="flush-collapseseven" class="accordion-collapse collapse" aria-labelledby="flush-headingseven" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             Unter den 1000 Dachsen gibt es vier besondere, die einige Benfits mitbringen: Supermann-Honigdachs, Batman-Honigdachs, Diamant-Honigdachs und Gold-Honigdachs.
-            (Anm. v. André: Wollten wir nicht auch noch die 100er Zahlen jeweils etwas besonders gestalten. Die sind
-            dann nicht so special wie die 4 aber auch special. Könnten hier Special oder Legendary als Bezeichnung
-            verwenden)
+            
 
             </div>
             </div>

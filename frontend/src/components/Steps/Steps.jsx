@@ -38,8 +38,7 @@ const Steps = () => {
             <li>
             Den NFT-Code vom gedruckten Ticket eingeben.
             <p>Bitte etwas Geduld, der NFT erscheint automatisch nach wenigen Minuten in deiner Wallet.
-              (Anm. von André: Idealerweise den gesamten Erklärungprozess in einzelnen, kleinen formatierten Schritten.
-              Ggfs. sogar mit Nummerierung)</p>
+              </p>
             </li>
         </ol>
         <div>

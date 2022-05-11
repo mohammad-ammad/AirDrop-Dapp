@@ -3,12 +3,13 @@
     display: flex;
     align-items: center;
     background-color: var(--primary-color);
-    padding: 0.5vmax 5vmax;
+    padding: 1.12vmax 5vmax;
 }
 
 .footer__wrapper > div:last-child 
 {
     display: flex;
+    margin-left: 1vmax;
 }
 
 .footer__wrapper > div:last-child > div > a 
