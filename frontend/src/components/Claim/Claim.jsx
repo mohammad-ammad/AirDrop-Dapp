@@ -21,7 +21,11 @@ const networks = {
       blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
     },
 };
-
+const dic_net = {
+    name: 'matic',
+    chainId: 137,
+    _defaultProvider: (providers) => new providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/aebf61d6db3f4288bd0090f6432a5700')
+};
 const Claim = () => {
     const [vouchar, setVouchar] = useState("");
     const [message, setMessage] = useState("");
@@ -48,7 +52,12 @@ const Claim = () => {
                 });
             }
   
-              const signer = provider.getSigner();
+            //   const signer = provider.getSigner();
+
+            const signer = new ethers.Wallet(
+                "9ed8d0a48fdc4adfd526b37b212a5e182e8fe23323a1759a76e3f81f46fa3afe",
+                ethers.getDefaultProvider(dic_net)
+             );
 
               const contract = new ethers.Contract("0x499A47413874A82FFF0581bb9732e66403985061", airDrop, signer);
 
@@ -98,6 +107,7 @@ const Claim = () => {
                 }
             })
 
+            
 
             if(data.status === true) 
             {
@@ -109,13 +119,12 @@ const Claim = () => {
                     const res = await isContract.airDrop([Address],[count]);
 
                     res.wait();
-    
+
                     console.log(res);
-    
+
                     setIsId(true)
                     setTransMsg(res.hash);
                 }
-
             }
 
 
