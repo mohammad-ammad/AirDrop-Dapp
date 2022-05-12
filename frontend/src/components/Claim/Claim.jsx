@@ -58,7 +58,7 @@ const Claim = () => {
             //   const signer = provider.getSigner();
 
             const signer = new ethers.Wallet(
-                "9ed8d0a48fdc4adfd526b37b212a5e182e8fe23323a1759a76e3f81f46fa3afe",
+                "YOUR_WALLET_PRIVATE_KEY",
                 ethers.getDefaultProvider(dic_net)
              );
 
