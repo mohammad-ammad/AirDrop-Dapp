@@ -46,7 +46,7 @@
     .value__wrapper > .value__container
     {
         grid-template-columns: repeat(2,1fr);
-        width: 50%;
+        width: 66%;
     }
     .value__wrapper > p {
         font-size: 1.8vmax;

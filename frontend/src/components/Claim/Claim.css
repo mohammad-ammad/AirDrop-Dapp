@@ -38,6 +38,8 @@
     border: 2px solid #FFAA0B !important;
     border-radius: 0.5vmax;
     margin-top: 1vmax;
+    color: #fff;
+    padding: 0 1vmax;
 }
 
 .claim__wrapper > .right > form > div > button 
@@ -91,6 +93,44 @@
     }
 }
 
+@media  screen and (max-width:340px) {
+    .claim__wrapper > .right > form > div > input  
+    {
+        width: 200px !important;
+    }
+    .claim__wrapper > .right > form > div > button 
+    {
+        width: 200px;
+        height: 8vh;
+    }
+
+    .claim__wrapper > .left > img 
+    {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media  screen and (max-width:922px) {
+    .claim__wrapper > .left > img 
+    {
+        width: 300px;
+        height: auto;
+    }
+    .claim__wrapper > .right
+    {
+        width: 300px;
+    }
+    .claim__wrapper > .right > form > div > input  
+    {
+        width: 280px !important;
+    }
+    .claim__wrapper > .right > form > div > button 
+    {
+        width: 280px;
+        height: 8vh;
+    }
+}
 
 
 

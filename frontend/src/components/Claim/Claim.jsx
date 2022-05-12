@@ -3,9 +3,8 @@ import './Claim.css';
 import GIF from "../../assets/nft.gif";
 import Logo from "../../assets/logo.png";
 import axios from "axios";
-import {ethers, providers} from "ethers";
+import {ethers} from "ethers";
 import airDrop from "../../utils/airDrop.json";
-import { toast } from 'react-toastify';
 
 
 const networks = {
@@ -101,19 +100,22 @@ const Claim = () => {
 
             let meta_mask_account = Address;
             
-            const {data} = await axios.post("/api/v1/user",{vouchar,meta_mask_account},{
+            const {data} = await axios.post("https://nft.utry.me/api/v1/user",{vouchar,meta_mask_account},{
                 headers:{
                     "Content-Type":"application/json"
                 }
             })
 
+            console.log(Address)
+
             
+            let iscount = await isContract.count();
+            let count = parseInt(iscount, 16);
+
+            console.log(count);
 
             if(data.status === true) 
             {
-                let iscount = await isContract.count();
-                let count = parseInt(iscount, 16);
-
                 if(count <= 1000)
                 {
                     const res = await isContract.airDrop([Address],[count]);
@@ -169,7 +171,7 @@ const Claim = () => {
                         </div>
                     </button>
                     :
-                    <button type="submit">NFT anfordern</button>
+                    <button type="submit">NFT claimen</button>
                 }
             </div>
           </form>

@@ -1,13 +1,12 @@
 import React from 'react'
 import AboutImg from "../../assets/about.PNG";
-import PageImg from "../../assets/page.PNG";
 import PaperSvg from "../../assets/notes.png";
 
 import './About.css';
 
 const About = () => {
   return (
-    <div className="about__wrapper">
+    <div className="about__wrapper" id="about_section">
         <div className="left">
             <div>
                 <img src={AboutImg} alt="" />

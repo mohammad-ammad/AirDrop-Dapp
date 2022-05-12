@@ -1,4 +1,3 @@
-import Form from "./components/Form";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -10,8 +9,6 @@ import Claim from "./components/Claim/Claim";
 function App() {
   return (
    <>
-   {/* <Navbar/>
-   <Form/> */}
    <HashRouter>
    <TopNav/>
     <Routes>

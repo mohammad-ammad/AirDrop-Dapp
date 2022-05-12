@@ -7,7 +7,7 @@ import ThreeImg from "../../assets/3.PNG";
 import FourImg from "../../assets/4.PNG";
 const Values = () => {
   return (
-    <div className="value__wrapper">
+    <div className="value__wrapper" id="values_section">
         <h3>Club Vorteile</h3>
         <p>
         Du bist Teil des exklusiven Honigdachs-VIP-Club und wirst auf LinkedIN oder per Mail
@@ -30,7 +30,6 @@ const Values = () => {
         Jeder Erstbesitzer eines der vier seltensten Honigdachs-NFTs Supermann-Honigdachs,
         Batman-Honigdachs, Diamant-Honigdachs oder Gold-Honigdachs erhält einen Jahresvorrat
         Utry.me-Boxen gratis!
-        (Bilder der seltenen Honigdachse)
         </p>
         <p>
         Bei Utry.me gibt es regelmäßig attraktive Gewinnspiele nur für Honigdachs-NFT-Inhaber.

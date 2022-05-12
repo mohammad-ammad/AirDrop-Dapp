@@ -31,7 +31,7 @@
 {
     padding-left: 3vmax;
 }
-.Steps__wrapper > div > img 
+.Steps__wrapper > div > a > img 
 {
     width: 200px;
     height: auto;
@@ -65,7 +65,7 @@
     {
         font-size: 1.6vmax;
     }
-    .Steps__wrapper > div > img 
+    .Steps__wrapper > div > a > img 
     {
         width: 100px;
         height: auto;

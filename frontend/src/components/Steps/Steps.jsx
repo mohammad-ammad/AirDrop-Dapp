@@ -42,7 +42,9 @@ const Steps = () => {
             </li>
         </ol>
         <div>
+            <a href='https://www.linkedin.com/groups/12660332/' target='_blank'>
             <img src={LinkedIn} alt="" srcset="" />
+            </a>
         </div>
     </div>
   )

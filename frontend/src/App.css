@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bilbo&family=Roboto&display=swap');
-
 *{
   padding: 0;
   margin: 0;
@@ -12,9 +10,11 @@
   --primary-text: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body 
 {
-  /* font-family: 'Roboto', sans-serif;
-  font-family: 'Bilbo', cursive; */
   color: var(--primary-text);
 }

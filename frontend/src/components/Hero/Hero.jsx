@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
         <div className="bottom">
             <Link to='/claim-nft'>
-              <button type='button'>NFT anfordern</button>
+              <button type='button'>NFT claimen</button>
             </Link>
         </div>
     </div>

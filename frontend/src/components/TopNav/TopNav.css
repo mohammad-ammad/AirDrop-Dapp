@@ -26,7 +26,7 @@
 {
     text-decoration: none;
     color: var(--primary-text);
-    /* font-family: 'Roboto', sans-serif; */
+    text-transform: uppercase;
     font-family:"museo-sans";
     font-size: 0.9vmax;
 }
@@ -105,6 +105,7 @@
         text-decoration: none;
         color: var(--primary-text);
         font-family:"museo-sans";
+        text-transform: uppercase;
     }
     .mob__nav_wrapper > .container__absolute  > div
     {

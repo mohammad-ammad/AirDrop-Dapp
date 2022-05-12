@@ -1,10 +1,9 @@
 import React from 'react'
-import FAQS from '../FAQS/FAQS';
 import './FAQ.css';
 
 const FAQ = () => {
   return (
-    <div className="faq__wrapper">
+    <div className="faq__wrapper" id="faq_section">
         <h3>FAQ</h3>
         <div className="faq__container">
         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -108,8 +107,6 @@ const FAQ = () => {
             <div id="flush-collapseeight" class="accordion-collapse collapse" aria-labelledby="flush-headingeight" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
             Der Handel mit den Honigdachs-NFTs findet ausschließlich auf OpenSea statt.
-            (Link zur Honigdachs-Kollektion auf OpenSea)
-
             </div>
             </div>
         </div>

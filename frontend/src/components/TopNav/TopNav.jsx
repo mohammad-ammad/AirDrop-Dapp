@@ -47,27 +47,49 @@ const TopNav = () => {
         alert("Need to install MetaMask");
     }
   }
+
+  const goToSection = (id) => 
+  {
+        const section = document.getElementById(id); 
+        window.scrollTo({
+        top:section.offsetTop-40,
+        behavior:"smooth"
+    });
+
+  }
+
+  const goToMobSection = (id) => 
+  {
+        const section = document.getElementById(id); 
+        window.scrollTo({
+        top:section.offsetTop-50,
+        behavior:"smooth"
+    });
+
+  }
   return (
     <>
     <div className="TopNav__wrapper">
         <div className="left">
-            <img src={Logo} alt="" srcset="" />
+            <Link to='/'>
+                <img src={Logo} alt="" srcset="" />
+            </Link>
         </div>
         <div className="mid">
            <div>
                <Link to="/">HOME</Link>
            </div>
            <div>
-               <a href="javaScript:void(0)">STEPS</a>
+               <a href="javaScript:void(0)" onClick={()=>goToSection('steps_section')}>Benötigte Steps</a>
            </div>
            <div>
-               <a href="javaScript:void(0)">VALUES</a>
+               <a href="javaScript:void(0)" onClick={()=>goToSection('values_section')}>Club Vorteile</a>
            </div>
            <div>
-               <a href="javaScript:void(0)">ABOUT</a>
+               <a href="javaScript:void(0)" onClick={()=>goToSection('about_section')}>ABOUT</a>
            </div>
            <div>
-               <a href="javaScript:void(0)">FAQ</a>
+               <a href="javaScript:void(0)" onClick={()=>goToSection('faq_section')}>FAQ</a>
            </div>
         </div>
         <div className="right">
@@ -80,7 +102,9 @@ const TopNav = () => {
     <div className="mob__nav_wrapper">
         <div className="container">
             <div className="left">
+                <Link to='/'>
                 <img src={Logo} alt="" srcset="" />
+                </Link>
             </div>
             <div className="right">
                 <IoIosMenu onClick={()=>setToggle(true)}/>
@@ -95,16 +119,16 @@ const TopNav = () => {
                <Link to="/">HOME</Link>
            </div>
            <div>
-               <a href="javaScript:void(0)">STEPS</a>
+               <a href="javaScript:void(0)" onClick={()=>goToMobSection('steps_section')}>Benötigte Steps</a>
            </div>
            <div>
-               <a href="javaScript:void(0)">VALUES</a>
+               <a href="javaScript:void(0)" onClick={()=>goToMobSection('values_section')}>Club Vorteile</a>
            </div>
            <div>
-               <a href="javaScript:void(0)">ABOUT</a>
+               <a href="javaScript:void(0)" onClick={()=>goToMobSection('about_section')}>ABOUT</a>
            </div>
            <div>
-               <a href="javaScript:void(0)">FAQ</a>
+               <a href="javaScript:void(0)" onClick={()=>goToMobSection('faq_section')}>FAQ</a>
            </div>
            <div>
            {
