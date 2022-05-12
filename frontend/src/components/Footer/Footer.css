@@ -2,8 +2,10 @@
 {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: var(--primary-color);
     padding: 1.12vmax 5vmax;
+    flex-direction: column;
 }
 
 .footer__wrapper > div:last-child 
@@ -15,7 +17,7 @@
 .footer__wrapper > div:last-child > div > a 
 {
     text-decoration: none;
-    margin-right: 1vmax;
+    margin-right: 2vmax;
     color: var(--primary-text);
     font-family:"museo-sans";
 }

@@ -2,12 +2,14 @@
 {
     background: rgb(255,239,0);
     background: linear-gradient(0deg, rgba(255,239,0,1) 0%, rgba(255,170,11,1) 48%);
-    min-height: 70vh;
+    /* min-height: 70vh; */
+    min-height: unset;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 8vmax 0;
+    /* padding: 8vmax 0; */
+    padding: 17vh 0 7vh;
 }
 
 .Hero__wrapper > .top > h1
@@ -34,10 +36,12 @@
     background-color: var(--primary-text);
     color: var(--primary-color);
     border-radius: 0.5vmax;
-    border: 1px solid var(--primary-color);
+    /* border: 1px solid var(--primary-color); */
     font-size: 1.8vmax;
     font-weight: 900;
     font-family:"museo-sans";
+    margin-top:50px !important;
+    border: 2px solid #000;
 }
 
 @media  screen and (max-width:860px) {

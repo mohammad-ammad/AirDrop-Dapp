@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutImg from "../../assets/about.PNG";
+import AboutImg from "../../assets/about.png";
 import PaperSvg from "../../assets/notes.png";
 
 import './About.css';
@@ -9,7 +9,7 @@ const About = () => {
     <div className="about__wrapper" id="about_section">
         <div className="left">
             <div>
-                <img src={AboutImg} alt="" />
+                <h3>wer ist <img src={AboutImg} alt="" /> ?</h3>
             </div>
             <div>
                 <p>

@@ -5,6 +5,8 @@ import Logo from "../../assets/logo.png";
 import axios from "axios";
 import {ethers} from "ethers";
 import airDrop from "../../utils/airDrop.json";
+import Alert from '../Alert/Alert';
+import { HiX } from 'react-icons/hi';
 
 
 const networks = {
@@ -23,16 +25,18 @@ const networks = {
 const dic_net = {
     name: 'matic',
     chainId: 137,
-    _defaultProvider: (providers) => new providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/aebf61d6db3f4288bd0090f6432a5700')
+    _defaultProvider: (providers) => new providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/8dff6829d724456db2d12fb8d93d7da8')
 };
 const Claim = () => {
     const [vouchar, setVouchar] = useState("");
     const [message, setMessage] = useState("");
     const [transMsg, setTransMsg] = useState("");
+    const [countid, setCountId] = useState(0);
     const [isId, setIsId] = useState(false);
     const [isMessage,setIsMessage] = useState(false);
     const [loading, setLoading] = useState(false);
     const [isContract, setIsContract] = useState([]);
+    const [isErrors, setIsErrors] = useState(false);
     useEffect(()=>{
       const loadContract = async () => 
       {
@@ -69,7 +73,7 @@ const Claim = () => {
           }
           else 
           {
-              alert("Need to install MetaMask");
+              setIsErrors(true)
           }
       }
 
@@ -100,9 +104,9 @@ const Claim = () => {
 
             let meta_mask_account = Address;
             
-            const {data} = await axios.post("https://nft.utry.me/api/v1/user",{vouchar,meta_mask_account},{
+            const {data} = await axios.post("/api/v1/user",{vouchar,meta_mask_account},{
                 headers:{
-                    "Content-Type":"application/json"
+                    "Content-Type":"application/json",
                 }
             })
 
@@ -125,7 +129,8 @@ const Claim = () => {
                     console.log(res);
 
                     setIsId(true)
-                    setTransMsg(res.hash);
+                    setTransMsg(res.to);
+                    setCountId(count - 1);
                 }
             }
 
@@ -141,12 +146,25 @@ const Claim = () => {
         }
         else 
         {
-            alert("Install MetaMask!!")
+            setIsErrors(true);
         }
     }
   return (
     <>
     <div className="claim__wrapper">
+    {
+                isErrors ? <div className="alert2__wrapper">
+                                <h5>Please Install Ethereum Wallet</h5>
+                                <p><HiX onClick={()=>setIsErrors(false)}/></p>
+                            </div> : ''
+            }
+            {
+                isMessage ? <div className="alert__wrapper">
+                                <h5>{message} {isId ? <a href={`https://testnets.opensea.io/assets/mumbai/${transMsg}/${countid}`} target='_blank'>Open Sea</a> : ''}</h5>
+                                <p><HiX onClick={()=>setIsMessage(false)}/></p>
+                            </div> : ''
+            }
+             
         <div className="left">
           <img src={GIF} alt="" srcset="" />
         </div>
@@ -154,12 +172,6 @@ const Claim = () => {
           <img src={Logo} alt="" />
           <form onSubmit={submitHandler}>
             <div>
-            {
-                isMessage ? <p className='message'>{message}</p> : ''
-            }
-            {
-                isId ? <p className='message'>Confirmation Transaction ID: {transMsg.slice(0,6)}...{transMsg.slice(59)}</p> : ''
-            }
             <input type="text" name="" id="" placeholder='Dein NFT-Gutschein Code*'  value={vouchar} onChange={(e)=>setVouchar(e.target.value)}/>
             </div>
             <div>

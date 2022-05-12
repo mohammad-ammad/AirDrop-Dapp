@@ -28,10 +28,22 @@
     color: var(--primary-text);
     text-transform: uppercase;
     font-family:"museo-sans";
-    font-size: 0.9vmax;
+    font-size: 16px;
 }
 
 .TopNav__wrapper > .right > button 
+{
+    padding: 0.3vmax 1.5vmax;
+    background-color: transparent;
+    border: 2px solid var(--primary-text);
+    color: var(--primary-text);
+    border-radius: 0.5vmax;
+    font-family:"museo-sans";
+    margin-right: 0.5vmax;
+    position: relative;
+}
+/* .TopNav__wrapper > .right >  */
+.TopNav__wrapper > .right > a > button 
 {
     padding: 0.3vmax 1.5vmax;
     background-color: transparent;
@@ -50,7 +62,7 @@
         font-size: 1.6vmax;
     }
 }
-@media  screen and (max-width:550px) {
+@media  screen and (max-width:998px) {
     .TopNav__wrapper 
     {
         display: none;
@@ -113,6 +125,17 @@
     }
 
     .mob__nav_wrapper > .container__absolute  > div > button 
+    {
+        padding: 0.3vmax 1.5vmax;
+        background-color: transparent;
+        border: 2px solid var(--primary-text);
+        color: var(--primary-text);
+        border-radius: 0.5vmax;
+        font-family:"museo-sans";
+    }
+
+
+    .mob__nav_wrapper > .container__absolute  > div > a > button 
     {
         padding: 0.3vmax 1.5vmax;
         background-color: transparent;

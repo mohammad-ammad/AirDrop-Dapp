@@ -2,8 +2,12 @@
 {
     background-color: var(--primary-color);
     min-height: 50vh;
-    padding: 2vmax 15vmax;
+    /* padding: 2vmax 15vmax; */
     color: var(--primary-text);
+
+    padding-top:7vh !important; padding-bottom:7vh !important;
+    padding-left: 15vmax;
+    padding-right: 15vmax;
 }
 
 .Steps__wrapper > h3 
@@ -21,6 +25,8 @@
     line-height: 1.6;
     font-family:"museo-sans";
 }
+
+.Steps__wrapper>ol>li::marker { font-family: 'wordy-diva'; font-size: 20px; }
 
 .Steps__wrapper > ol > li > p 
 {

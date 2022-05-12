@@ -6,7 +6,7 @@
     display:  flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5.5vmax 0;
+    padding: 5vmax 0;
 }
 .claim__wrapper > .left 
 {

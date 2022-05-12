@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import {ethers} from "ethers"
 import {IoIosMenu} from "react-icons/io"
 import {HiX} from "react-icons/hi"
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
+
 
 const networks = {
     polygon: {
@@ -20,9 +22,19 @@ const networks = {
     },
 };
 
+const coinbaseWallet = new CoinbaseWalletSDK({
+    appName: "UTRY.ME",
+    appLogoUrl: "https://www.utry.me/img/favicon/android-icon-192x192.png",
+    darkMode: false
+  })
+
+const ethereum = coinbaseWallet.makeWeb3Provider("https://rpc-mumbai.maticvigil.com/",
+ 137);
+
 const TopNav = () => {
     const [account,setAccount] = useState("");
     const [toggle, setToggle] = useState(false);
+    const [isError, setIsError] = useState(false);
 
   const connectMetaMask = async() => 
   {
@@ -44,8 +56,19 @@ const TopNav = () => {
     }
     else 
     {
-        alert("Need to install MetaMask");
+        setIsError(true);
     }
+  }
+
+  const connectCoinBased = () => 
+  {
+    const provider = new ethers.providers.Web3Provider(ethereum)
+    console.log(provider)
+    ethereum.request({ method: 'eth_requestAccounts' }).then(response => {
+        const accounts = response;
+        console.log(`User's address is ${accounts[0]}`)
+        setAccount(accounts[0]);
+      })
   }
 
   const goToSection = (id) => 
@@ -70,6 +93,12 @@ const TopNav = () => {
   return (
     <>
     <div className="TopNav__wrapper">
+        {
+                isError ? <div className="alert2__wrapper">
+                                <h5>Please Install Ethereum Wallet</h5>
+                                <p><HiX onClick={()=>setIsError(false)}/></p>
+                            </div> : ''
+            }
         <div className="left">
             <Link to='/'>
                 <img src={Logo} alt="" srcset="" />
@@ -94,9 +123,20 @@ const TopNav = () => {
         </div>
         <div className="right">
             {
-              account != "" ? <button type='button'>{account.slice(0,6)}...{account.slice(39)}</button> : 
-              <button type='button' onClick={connectMetaMask}>Wallet</button>
+              account != "" ? <button type='button'>Connected</button> : 
+              <button type='button' onClick={connectCoinBased}>Wallet</button>
             }
+            {/* <div className="sub_menu">
+                <div>
+                    <button type='button' onClick={connectMetaMask}>MetaMasK</button>
+                </div>
+                <div>
+                <button type='button' onClick={connectCoinBased}>CoinBased</button>
+                </div>
+            </div> */}
+            <a href='https://testnets.opensea.io/' target='_blank'>
+                <button type='button'>Open Sea</button>
+            </a>
         </div>
     </div>
     <div className="mob__nav_wrapper">
@@ -132,9 +172,15 @@ const TopNav = () => {
            </div>
            <div>
            {
-              account != "" ? <button type='button'>{account.slice(0,6)}...{account.slice(39)}</button> : 
-              <button type='button' onClick={connectMetaMask}>Wallet</button>
+              account != "" ? <button type='button'>Connected</button> : 
+              <button type='button' onClick={connectCoinBased}>Wallet</button>
             }
+            
+           </div>
+           <div>
+           <a href='https://testnets.opensea.io/' target='_blank'>
+                <button type='button'>Open Sea</button>
+            </a>
            </div>
         </div>
         }

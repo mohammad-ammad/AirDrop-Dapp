@@ -5,7 +5,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5vmax 15vmax;
+    /* padding: 5vmax 15vmax; */
+
+    padding-top:7vh !important; padding-bottom:7vh !important;
+    padding-left: 15vmax;
+    padding-right: 15vmax;
+}
+.about__wrapper > .left > div > h3 
+{
+    font-family:"wordy-diva";
+    color: #fff;
+    font-size: 3vmax;
+    padding-left: 10px;
 }
 
 .about__wrapper > .left > div > p
@@ -24,18 +35,38 @@
     {
         font-size: 1.6vmax;
     }
+    .about__wrapper > .left > div > h3 
+    {
+        font-size: 3vmax;
+    }
+    .about__wrapper > .left > div > h3 > img 
+    {
+        width: 150px;
+        height: auto;
+    }
 }
 
 @media  screen and (max-width:800px) {
     .about__wrapper 
     {
         flex-direction: column;
+        padding: 5vmax 2vmax;
     }
 
     .about__wrapper > .right > img 
     {
         width: 360px;
         /* object-fit: cover; */
+    }
+
+    .about__wrapper > .left > div > h3 
+    {
+        font-size: 3vmax;
+    }
+    .about__wrapper > .left > div > h3 > img 
+    {
+        width: 100px;
+        height: auto;
     }
 
 }

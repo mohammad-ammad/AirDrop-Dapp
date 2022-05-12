@@ -1,10 +1,10 @@
 import React from 'react'
 import Cards from '../Cards/Cards';
 import './Values.css';
-import OneImg from "../../assets/1.PNG";
-import TwoImg from "../../assets/2.PNG";
-import ThreeImg from "../../assets/3.PNG";
-import FourImg from "../../assets/4.PNG";
+import OneImg from "../../assets/1.png";
+import TwoImg from "../../assets/2.png";
+import ThreeImg from "../../assets/3.png";
+import FourImg from "../../assets/4.png";
 const Values = () => {
   return (
     <div className="value__wrapper" id="values_section">

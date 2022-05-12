@@ -1,0 +1,31 @@
+.alert__wrapper 
+{
+    background-color: #000;
+    width: 400px;
+    height: 50px;
+    position: absolute;
+    bottom: 100px;
+    right: 10px;
+    color: #fff;
+    z-index: 999999;
+    border-radius: 0.7vmax;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vmax;
+    transition: all 0.3s ease-in-out;
+}
+
+.alert__wrapper > h5 
+{
+    font-size: 1vmax;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.alert__wrapper > p 
+{
+    font-size: 1vmax;
+    padding-top: 1vmax;
+    cursor: pointer;
+}
