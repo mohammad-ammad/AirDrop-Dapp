@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './TopNav.css';
 import Logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, Navigate } from 'react-router-dom';
 import {ethers} from "ethers"
 import {IoIosMenu} from "react-icons/io"
 import {HiX} from "react-icons/hi"
@@ -89,23 +89,41 @@ const TopNav = () => {
     
   }
 
+  const location = useLocation();
+
   const goToSection = (id) => 
   {
-        const section = document.getElementById(id); 
-        window.scrollTo({
-        top:section.offsetTop-40,
-        behavior:"smooth"
-    });
+        
+        if(location.pathname == '/claim-nft')
+        {
+            window.location.href = "/"
+        } 
+        else 
+        {
+            const section = document.getElementById(id); 
+                window.scrollTo({
+                top:section.offsetTop-40,
+                behavior:"smooth"
+            });
+        }
 
   }
 
   const goToMobSection = (id) => 
   {
+    if(location.pathname == '/claim-nft')
+    {
+        window.location.href = "/"
+    } 
+    else 
+    {
         const section = document.getElementById(id); 
         window.scrollTo({
         top:section.offsetTop-50,
         behavior:"smooth"
     });
+    }
+       
 
   }
 
