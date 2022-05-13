@@ -175,7 +175,7 @@ const TopNav = () => {
                 </div>
             </div>
             }
-            <a href='https://testnets.opensea.io/' target='_blank'>
+            <a href='https://testnets.opensea.io/collection/utry-me' target='_blank'>
                 <button type='button'>Open Sea</button>
             </a>
         </div>
@@ -230,7 +230,7 @@ const TopNav = () => {
             
            </div>
            <div>
-           <a href='https://testnets.opensea.io/' target='_blank'>
+           <a href='https://testnets.opensea.io/collection/utry-me' target='_blank'>
                 <button type='button'>Open Sea</button>
             </a>
            </div>
