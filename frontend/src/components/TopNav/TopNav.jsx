@@ -22,14 +22,7 @@ const networks = {
     },
 };
 
-const coinbaseWallet = new CoinbaseWalletSDK({
-    appName: "UTRY.ME",
-    appLogoUrl: "https://www.utry.me/img/favicon/android-icon-192x192.png",
-    darkMode: false
-  })
 
-const ethereum = coinbaseWallet.makeWeb3Provider("https://rpc-mumbai.maticvigil.com/",
- 137);
 
 const TopNav = () => {
     const [account,setAccount] = useState("");
@@ -64,14 +57,36 @@ const TopNav = () => {
 
   const connectCoinBased = () => 
   {
-    const provider = new ethers.providers.Web3Provider(ethereum)
-    console.log(provider)
-    ethereum.request({ method: 'eth_requestAccounts' }).then(response => {
-        const accounts = response;
-        console.log(`User's address is ${accounts[0]}`)
-        setAccount(accounts[0]);
-        setSubMenu(false)
-      })
+    if(window.ethereum)
+    {
+        try {
+            const coinbaseWallet = new CoinbaseWalletSDK({
+                appName: "UTRY.ME",
+                appLogoUrl: "https://www.utry.me/img/favicon/android-icon-192x192.png",
+                darkMode: false
+              })
+            
+            const ethereum = coinbaseWallet.makeWeb3Provider("https://rpc-mumbai.maticvigil.com/",
+             137);
+
+             ethereum.request({ method: 'eth_requestAccounts' }).then(response => {
+                
+                const accounts = response;
+                setAccount(accounts[0]);
+                setSubMenu(false)
+                
+            })
+
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    else 
+    {
+        setIsError(true);
+    }
+    
   }
 
   const goToSection = (id) => 

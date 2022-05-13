@@ -5,9 +5,9 @@ import Logo from "../../assets/logo.png";
 import axios from "axios";
 import {ethers} from "ethers";
 import airDrop from "../../utils/airDrop.json";
-import Alert from '../Alert/Alert';
 import { HiX } from 'react-icons/hi';
 
+const proxy = "https://nftbackend.utry.me";
 
 const networks = {
     polygon: {
@@ -25,7 +25,7 @@ const networks = {
 const dic_net = {
     name: 'matic',
     chainId: 137,
-    _defaultProvider: (providers) => new providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/8dff6829d724456db2d12fb8d93d7da8')
+    _defaultProvider: (providers) => new providers.JsonRpcProvider(`${process.env.React_App_INFURIA_LINK}`)
 };
 const Claim = () => {
     const [vouchar, setVouchar] = useState("");
@@ -58,17 +58,14 @@ const Claim = () => {
             //   const signer = provider.getSigner();
 
             const signer = new ethers.Wallet(
-                "YOUR_PRIVATE_KEY",
+                `${process.env.React_App_ACCOUNT_PRIVATE_KEY}`,
                 ethers.getDefaultProvider(dic_net)
              );
 
-              const contract = new ethers.Contract("0x499A47413874A82FFF0581bb9732e66403985061", airDrop, signer);
+              const contract = new ethers.Contract(`${process.env.React_App_CONTRACT_ADDRESS}`, airDrop, signer);
 
               setIsContract(contract);
 
-              console.log(contract)
-            
-           
 
           }
           else 
@@ -104,15 +101,12 @@ const Claim = () => {
 
             let meta_mask_account = Address;
             
-            const {data} = await axios.post("/api/v1/user",{vouchar,meta_mask_account},{
+            const {data} = await axios.post(`${process.env.React_App_PROXY_VARIABLE}/api/v1/user`,{vouchar,meta_mask_account},{
                 headers:{
                     "Content-Type":"application/json",
                 }
             })
 
-            console.log(Address)
-
-            
             let iscount = await isContract.count();
             let count = parseInt(iscount, 16);
 
@@ -122,15 +116,19 @@ const Claim = () => {
             {
                 if(count <= 1000)
                 {
+                   try {
                     const res = await isContract.airDrop([Address],[count]);
 
                     res.wait();
 
-                    console.log(res);
-
                     setIsId(true)
                     setTransMsg(res.to);
                     setCountId(count);
+                   } catch (error) {
+                    setIsMessage(true);
+                    setMessage("something went wrong");
+                    console.log("something went wrong");
+                   }
                 }
             }
 
