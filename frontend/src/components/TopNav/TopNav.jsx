@@ -34,6 +34,7 @@ const ethereum = coinbaseWallet.makeWeb3Provider("https://rpc-mumbai.maticvigil.
 const TopNav = () => {
     const [account,setAccount] = useState("");
     const [toggle, setToggle] = useState(false);
+    const [subMenu, setSubMenu] = useState(false);
     const [isError, setIsError] = useState(false);
 
   const connectMetaMask = async() => 
@@ -53,6 +54,7 @@ const TopNav = () => {
         });
         }
         setAccount(result[0]);
+        setSubMenu(false)
     }
     else 
     {
@@ -68,6 +70,7 @@ const TopNav = () => {
         const accounts = response;
         console.log(`User's address is ${accounts[0]}`)
         setAccount(accounts[0]);
+        setSubMenu(false)
       })
   }
 
@@ -90,6 +93,9 @@ const TopNav = () => {
     });
 
   }
+
+  
+
   return (
     <>
     <div className="TopNav__wrapper">
@@ -124,16 +130,18 @@ const TopNav = () => {
         <div className="right">
             {
               account != "" ? <button type='button'>Connected</button> : 
-              <button type='button' onClick={connectCoinBased}>Wallet</button>
+              <button type='button' onClick={()=>setSubMenu(!subMenu)}>Wallet</button>
             }
-            {/* <div className="sub_menu">
+            {
+                subMenu && <div className="sub_menu">
                 <div>
                     <button type='button' onClick={connectMetaMask}>MetaMasK</button>
                 </div>
                 <div>
                 <button type='button' onClick={connectCoinBased}>CoinBased</button>
                 </div>
-            </div> */}
+            </div>
+            }
             <a href='https://testnets.opensea.io/' target='_blank'>
                 <button type='button'>Open Sea</button>
             </a>
@@ -173,7 +181,18 @@ const TopNav = () => {
            <div>
            {
               account != "" ? <button type='button'>Connected</button> : 
-              <button type='button' onClick={connectCoinBased}>Wallet</button>
+              <button type='button' onClick={()=>setSubMenu(!subMenu)}>Wallet</button>
+            }
+
+            {
+                subMenu && <div className="mob__sub__menu">
+                <div>
+                    <button type='button' onClick={connectMetaMask}>MetaMask</button>
+                </div>
+                <div>
+                    <button type='button' onClick={connectCoinBased}>CoinBased</button>
+                </div>
+            </div>
             }
             
            </div>

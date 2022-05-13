@@ -42,7 +42,32 @@
     margin-right: 0.5vmax;
     position: relative;
 }
-/* .TopNav__wrapper > .right >  */
+.TopNav__wrapper > .right > .sub_menu 
+{
+    position: absolute;
+    top: 65px;
+    background-color: black;
+    width: 200px;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.7vmax;
+}
+.TopNav__wrapper > .right > .sub_menu > div 
+{
+    margin-bottom: 0.3vmax;
+}
+.TopNav__wrapper > .right > .sub_menu > div > button 
+{
+    padding: 0.3vmax 1.5vmax;
+    background-color: transparent;
+    border: 2px solid var(--primary-text);
+    color: var(--primary-text);
+    border-radius: 0.5vmax;
+    font-family:"museo-sans";
+}
 .TopNav__wrapper > .right > a > button 
 {
     padding: 0.3vmax 1.5vmax;
@@ -143,5 +168,19 @@
         color: var(--primary-text);
         border-radius: 0.5vmax;
         font-family:"museo-sans";
+    }
+    .mob__nav_wrapper > .container__absolute > div > .mob__sub__menu 
+    {
+        margin: 2vmax 0;
+    }
+    .mob__nav_wrapper > .container__absolute > div > .mob__sub__menu > div > button
+    {
+        padding: 0.3vmax 1.5vmax;
+        background-color: transparent;
+        border: 2px solid var(--primary-text);
+        color: var(--primary-text);
+        border-radius: 0.5vmax;
+        font-family:"museo-sans";
+        margin: 1vmax 0;
     }
 }

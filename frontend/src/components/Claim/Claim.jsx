@@ -58,7 +58,7 @@ const Claim = () => {
             //   const signer = provider.getSigner();
 
             const signer = new ethers.Wallet(
-                "YOUR_WALLET_PRIVATE_KEY",
+                "YOUR_PRIVATE_KEY",
                 ethers.getDefaultProvider(dic_net)
              );
 
@@ -130,7 +130,7 @@ const Claim = () => {
 
                     setIsId(true)
                     setTransMsg(res.to);
-                    setCountId(count - 1);
+                    setCountId(count);
                 }
             }
 
