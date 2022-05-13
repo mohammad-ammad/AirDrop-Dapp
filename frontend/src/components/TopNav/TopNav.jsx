@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './TopNav.css';
 import Logo from '../../assets/logo.png';
-import { Link, useLocation, Navigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {ethers} from "ethers"
 import {IoIosMenu} from "react-icons/io"
 import {HiX} from "react-icons/hi"
