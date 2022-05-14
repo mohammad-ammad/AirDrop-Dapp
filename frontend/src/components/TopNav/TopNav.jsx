@@ -2,10 +2,12 @@ import React, {useState} from 'react'
 import './TopNav.css';
 import Logo from '../../assets/logo.png';
 import { Link, useLocation } from 'react-router-dom';
-import {ethers} from "ethers"
+// import {ethers} from "ethers"
 import {IoIosMenu} from "react-icons/io"
 import {HiX} from "react-icons/hi"
 import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
+
+const {ethers} = window.ethers;
 
 
 const networks = {
@@ -35,7 +37,7 @@ const TopNav = () => {
     if(window.ethereum)
     {
         const result = await window.ethereum.request({method:'eth_requestAccounts'});
-        const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
         if (provider.network !== "matic") {
         await window.ethereum.request({
             method: "wallet_addEthereumChain",
@@ -175,7 +177,7 @@ const TopNav = () => {
                 </div>
             </div>
             }
-            <a href='https://testnets.opensea.io/collection/utry-me' target='_blank'>
+            <a href='https://testnets.opensea.io/collection/honigdachs-vip-club-v3' target='_blank'>
                 <button type='button'>Open Sea</button>
             </a>
         </div>
@@ -230,7 +232,7 @@ const TopNav = () => {
             
            </div>
            <div>
-           <a href='https://testnets.opensea.io/collection/utry-me' target='_blank'>
+           <a href='https://testnets.opensea.io/collection/honigdachs-vip-club-v3' target='_blank'>
                 <button type='button'>Open Sea</button>
             </a>
            </div>

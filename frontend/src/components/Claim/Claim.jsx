@@ -3,11 +3,11 @@ import './Claim.css';
 import GIF from "../../assets/nft.gif";
 import Logo from "../../assets/logo.png";
 import axios from "axios";
-import {ethers} from "ethers";
+// import {ethers} from "ethers";
 import airDrop from "../../utils/airDrop.json";
 import { HiX } from 'react-icons/hi';
 
-const proxy = "https://nftbackend.utry.me";
+const {ethers} = window.ethers;
 
 const networks = {
     polygon: {
@@ -66,6 +66,8 @@ const Claim = () => {
 
               setIsContract(contract);
 
+            //   console.log(contract.airDrop([0x0],[4]))
+
 
           }
           else 
@@ -84,7 +86,7 @@ const Claim = () => {
         {
             setLoading(true);
             await window.ethereum.request({ method: "eth_requestAccounts" });
-            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
             if (provider.network !== "matic") {
                 await window.ethereum.request({
                     method: "wallet_addEthereumChain",
