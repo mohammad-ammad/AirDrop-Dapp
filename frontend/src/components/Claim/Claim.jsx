@@ -44,18 +44,18 @@ const Claim = () => {
           {
               const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-              if (provider.network !== "matic") {
-                await window.ethereum.request({
-                    method: "wallet_addEthereumChain",
-                    params: [
-                    {
-                        ...networks["polygon"],
-                    },
-                    ],
-                });
-            }
+            //   if (provider.network !== "matic") {
+            //     await window.ethereum.request({
+            //         method: "wallet_addEthereumChain",
+            //         params: [
+            //         {
+            //             ...networks["polygon"],
+            //         },
+            //         ],
+            //     });
+            // }
   
-            //   const signer = provider.getSigner();
+              // const signer = provider.getSigner();
 
             const signer = new ethers.Wallet(
                 `${process.env.React_App_ACCOUNT_PRIVATE_KEY}`,
@@ -66,7 +66,10 @@ const Claim = () => {
 
               setIsContract(contract);
 
+              // console.log(await contract.name());
+
             //   console.log(contract.airDrop([0x0],[4]))
+            console.log(process.env.React_App_Secret_Key);
 
 
           }
@@ -87,16 +90,16 @@ const Claim = () => {
             setLoading(true);
             await window.ethereum.request({ method: "eth_requestAccounts" });
             const provider = new ethers.providers.Web3Provider(window.ethereum);
-            if (provider.network !== "matic") {
-                await window.ethereum.request({
-                    method: "wallet_addEthereumChain",
-                    params: [
-                    {
-                        ...networks["polygon"],
-                    },
-                    ],
-                });
-            }
+            // if (provider.network !== "matic") {
+            //     await window.ethereum.request({
+            //         method: "wallet_addEthereumChain",
+            //         params: [
+            //         {
+            //             ...networks["polygon"],
+            //         },
+            //         ],
+            //     });
+            // }
             const account = provider.getSigner();
             const Address = await account.getAddress();
             
@@ -119,7 +122,7 @@ const Claim = () => {
                 if(count <= 1000)
                 {
                    try {
-                    const res = await isContract.airDrop([Address],[count]);
+                    const res = await isContract.airDrop(Address,process.env.React_App_Secret_Key);
 
                     res.wait();
 
@@ -129,7 +132,8 @@ const Claim = () => {
                    } catch (error) {
                     setIsMessage(true);
                     setMessage("something went wrong");
-                    console.log("something went wrong");
+                    console.log("abc")
+                    console.log(error);
                    }
                 }
             }
